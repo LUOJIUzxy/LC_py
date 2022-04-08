@@ -1,4 +1,8 @@
 from ast import List
+#find the heaviest stone at first and record its index ->y, y_index
+#then find the second heaviest stone by setting it larger than other stones but smaller or equal than y and record its index -> x, x_index
+#but if the y_index is 0, in order to let x to be different from y, should set x starting from index 1
+#Also, remember to change the value of y first and delete x_index afterwards, cause delete action would affect index
 
 def lastStoneWeight(self, stones: List[int]):
         #y is the heaviest, x is the second heaviest

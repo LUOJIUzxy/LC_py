@@ -1,5 +1,10 @@
 from ast import List
-
+#used three loops so the time complexity is pretty high
+#Considered the common letters should be in all strings, so I traverse all letters in the first word(words[0]) and compare them with other letters in the following words
+#if one matches, then record its index and sum up all the indexes recorded to see if it matches the sum from 1 to len(words) - 1, which equals len(words)*(len(words-1)/2
+#if it does, then means every word has the mutual letter, so add it to the result list
+#But need to take care that the matched letter should be removed out of the corresponding word, in case that it would be counted as another duplicate mutual letter in the following matches(which in fact only one exists)
+#['book', 'rock', 'goose'] 
 
 class Solution:
     def commonChars(self, words: List[str]) -> List[str]:
