@@ -4,6 +4,7 @@ from ast import List
 #but if the y_index is 0, in order to let x to be different from y, should set x starting from index 1
 #Also, remember to change the value of y first and delete x_index afterwards, cause delete action would affect index
 
+#46ms
 def lastStoneWeight(self, stones: List[int]):
         #y is the heaviest, x is the second heaviest
     
@@ -41,3 +42,26 @@ def lastStoneWeight(self, stones: List[int]):
                 if x != y:
                     stones[y_index] = y - x
                     del stones[x_index]
+
+#1. possible optimization: find the heaviest stone  ---->  use the sort() method in python to directly get the first two heaviest stones
+#50ms
+def lastStoneWeight(self, stones: List[int]):
+        #y is the heaviest, x is the second heaviest
+    
+        while len(stones) >= 0:
+            stones.sort()
+            
+            if len(stones) == 0:
+                return 0
+            if len(stones) == 1:
+                return stones[0]
+            
+            y = stones[-1]
+            x = stones[-2]
+            
+            #if x == y:
+            stones.pop()
+            stones.pop()
+            
+            if x != y:         
+                stones.append(y - x)
