@@ -10,3 +10,5 @@ class Solution:
                     returnList[0] = i
                     returnList[1] = j
                     return returnList
+
+#first optimization
